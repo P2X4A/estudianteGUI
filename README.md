@@ -1,68 +1,58 @@
-﻿# Registro de Estudiantes y Cursos
+﻿# ðŸ‘¨â€ðŸŽ“ Registro de Estudiantes y Cursos
 
-Aplicacion grafica para registrar estudiantes y cursos con validacion de datos y persistencia.
+AplicaciÃ³n grÃ¡fica para registrar estudiantes y cursos con validaciÃ³n de datos y persistencia, desarrollada en Java con **Swing** y arquitectura **MVC**.
 
-## Detalle
+## ðŸ“‹ CaracterÃ­sticas
 
-| | |
-|---|---|
-| Tipo | Swing (MVC) |
-| Archivos Java | 16 |
-| Version de Java | 21 |
-| Patron | Arquitectura MVC Swing con patron DAO |
+- Registro de estudiantes con validaciÃ³n de campos
+- Registro de cursos asociados a estudiantes
+- Persistencia de datos en archivo plano mediante `FileHandler`
+- Arquitectura MVC con separaciÃ³n clara de responsabilidades
+- Panel de datos reutilizable (`PanelDatoRegistro`)
+- Interfaz grÃ¡fica Swing con mÃºltiples ventanas
 
-## Funcionalidades
+## ðŸ› ï¸ TecnologÃ­as
 
-- Formulario de registro de estudiantes
-- Formulario de registro de cursos
-- Validacion de correo y celular
-- Persistencia DAO con archivo plano
-- DataMapper entidad-DTO
+- Java + Swing
+- Maven
+- PatrÃ³n MVC
+- PatrÃ³n DAO / DTO
 
-## Estructura del proyecto
+## ðŸš€ CÃ³mo ejecutar
+
+```bash
+git clone https://github.com/P2X4A/estudianteGUI.git
+cd estudianteGUI
+mvn clean compile
+mvn exec:java -Dexec.mainClass="AplMain"
+```
+
+## ðŸ“ Estructura
 
 ```
 estudianteGUI/
-|-- pom.xml       configuracion de Maven, importable desde cualquier IDE
-|-- src/          codigo fuente
-`-- README.md
+â”œâ”€â”€ pom.xml
+â”œâ”€â”€ README.md
+â”œâ”€â”€ LICENSE
+â”œâ”€â”€ src/
+â”‚   â”œâ”€â”€ AplMain.java
+â”‚   â”œâ”€â”€ Controlador.java
+â”‚   â”œâ”€â”€ Estudiante.java, Curso.java
+â”‚   â”œâ”€â”€ EstudianteDTO.java, CursoDTO.java
+â”‚   â”œâ”€â”€ EstudianteIdaoImpl.java, CursoIdaoImpl.java
+â”‚   â”œâ”€â”€ IDAO.java, DataMapper.java
+â”‚   â”œâ”€â”€ FileHandler.java
+â”‚   â”œâ”€â”€ VentanaPrincipal.java
+â”‚   â”œâ”€â”€ VentanaRegistroEstudiante.java
+â”‚   â”œâ”€â”€ VentanaRegistroCurso.java
+â”‚   â””â”€â”€ PanelDatoRegistro.java
+â””â”€â”€ ...
 ```
 
-## Como ejecutarlo
+## ðŸ‘¨â€ðŸ’» Autor
 
-### Con Maven
+Sergio Parra
 
-```bash
-mvn clean compile
-mvn exec:java
-```
+---
 
-### Con javac directamente
-
-```bash
-# Linux / macOS
-javac -d bin $(find src -name "*.java")
-
-# Windows (PowerShell)
-javac -d bin (Get-ChildItem -Recurse -Filter *.java src).FullName
-```
-
-```bash
-java -cp bin co.edu.unbosque.controller.AplMain
-```
-
-### Desde un IDE
-
-Cualquier IDE con soporte de Java (Eclipse, IntelliJ IDEA, VS Code o NetBeans)
-puede importar el proyecto directamente como **proyecto Maven**. Basta con abrir
-o importar la carpeta: el IDE detecta el `pom.xml`, resuelve las dependencias y
-compila sin configuracion adicional.
-
-## Autor
-
-Desarrollado por [Sergio Parra](https://github.com/P2X4A) como parte de su
-formacion en Java.
-
-## Licencia
-
-Ver el archivo [LICENSE](LICENSE).
+*Proyecto acadÃ©mico para portafolio.*
